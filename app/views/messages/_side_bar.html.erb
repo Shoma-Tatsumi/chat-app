@@ -1,6 +1,8 @@
     <div class="side-bar-header">
       <div class="header-name">
-        <a href="#">Tom</a>
+        <%# <a href="#">Tom</a> %>
+        <%= link_to current_user.name, edit_user_path(current_user) %>  <%# ユーザー名をクリックすると、usersコントローラーのeditアクションが実行され、編集ページに遷移できる%>
+        <%#         ↑ログインしているユーザー名       ↑ログインしているユーザーの編集先path%>
       </div>
       <div class="create-room">
         <a href="#">チャットを作成する</a>
