@@ -5,5 +5,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:edit, :update]
   # 新規チャットルーム作成で動くアクションはnew, createのみ
-  resources :rooms, only: [:new, :create] 
+  resources :rooms, only: [:new, :create] do
+    resources :messages, only: [:index, :create] #メッセージ送信機能にindex・createが必要,どのルームで投稿されたメッセージかパスから判断したい→ルーティングのネスト
+  end
 end
