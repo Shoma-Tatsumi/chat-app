@@ -6,7 +6,9 @@
       </div>
       <div class="right-header">
         <div class="header-button">
-          <a href="#">チャットを終了する</a>
+          <%= link_to "チャットを終了する", room_path(@room), method: :delete %> <%#destroyアクション動かすlink_toを、_main_chat.html.erbに設定 %>
+          <%# 削除するチャットルームを区別するために、定義している@roomを引数にし、room_path(@room)と指定 %>
+          <%# HTTPメソッドのdeleteを指定すると、roomsコントローラーのdestroyアクションが実行 %>
         </div>
       </div>
     </div>
