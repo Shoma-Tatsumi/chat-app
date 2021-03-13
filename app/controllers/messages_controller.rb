@@ -20,6 +20,6 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:content).merge(user_id: current_user.id) #ログインしているユーザーidとひも付いているメッセージ内容contentを受け取れるよう許可
+    params.require(:message).permit(:content, :image).merge(user_id: current_user.id) #ログインしているユーザーidとひも付いているメッセージ内容content,imageを受け取れるよう許可
   end
 end
